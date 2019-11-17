@@ -10,13 +10,13 @@ export default class Loading extends React.Component {
     }
 
     firebase.auth().onAuthStateChanged(user => {
-      this.props.navigation.navigate(user ? 'Profile' : 'SignUp');
+      this.props.navigation.navigate(user ? 'Main' : 'LogIn');
     });
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text>Loadinggggg</Text>
+        <Text>Loading...</Text>
         <ActivityIndicator size="large" />
       </View>
     );

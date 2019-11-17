@@ -10,3 +10,10 @@
 //     Main: MainTabNavigator,
 //   })
 // );
+
+// import LogIn from './screens/LogIn';
+// import SignUp from './screens/SignUp';
+// import Loading from './screens/Loading';
+// import Home from './screens/HomeScreen';
+// import Profile from './screens/Profile';
+// //import Main from './Main';

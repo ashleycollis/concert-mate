@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Button,
+  ImageBackground,
+} from 'react-native';
 import firebase from 'firebase';
 export default class SignUp extends React.Component {
   state = { email: '', password: '', errorMessage: null };
@@ -12,32 +19,38 @@ export default class SignUp extends React.Component {
   };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Sign Up Here</Text>
-        {this.state.errorMessage && (
-          <Text style={{ color: 'red' }}>{this.state.errorMessage}</Text>
-        )}
-        <TextInput
-          placeholder="Email"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-        />
-        <TextInput
-          secureTextEntry
-          placeholder="Password"
-          autoCapitalize="none"
-          style={styles.textInput}
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-        />
-        <Button title="Sign Up" onPress={this.handleSignUp} />
-        <Button
-          title="Already have an account? Login"
-          onPress={() => this.props.navigation.navigate('LogIn')}
-        />
-      </View>
+      <ImageBackground
+        source={require('../assets/images/signupicon.jpg')}
+        style={{ width: '100%', height: '100%' }}
+        imageStyle={{ opacity: 0.5 }}
+      >
+        <View style={styles.container}>
+          <Text style={styles.headingText}> Create Account</Text>
+          {this.state.errorMessage && (
+            <Text style={{ color: 'red' }}>{this.state.errorMessage}</Text>
+          )}
+          <TextInput
+            placeholder="Email"
+            placeholderTextColor="#54086B"
+            autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={email => this.setState({ email })}
+            value={this.state.email}
+          />
+          <TextInput
+            secureTextEntry
+            placeholder="Password"
+            placeholderTextColor="#54086B"
+            autoCapitalize="none"
+            style={styles.textInput}
+            onChangeText={password => this.setState({ password })}
+            value={this.state.password}
+          />
+          <Button title="Sign Up" onPress={this.handleSignUp}>
+            <Text>Sign Up</Text>
+          </Button>
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -50,8 +63,12 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     width: '90%',
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 3,
     marginTop: 8,
+  },
+  headingText: {
+    fontSize: 50,
+    fontWeight: 'bold',
   },
 });
