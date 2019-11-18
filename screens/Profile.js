@@ -11,17 +11,21 @@ export default class Profile extends React.Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <View style={styles.container}>
-        <Text>Welcome {currentUser && currentUser.email}!</Text>
-        <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            height: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Text>Profile</Text>
+          <Text>Welcome {currentUser && currentUser.email}!</Text>
+        </View>
+        <View>
+          <Button title="Sign out" onPress={() => firebase.auth().signOut()} />
+        </View>
       </View>
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

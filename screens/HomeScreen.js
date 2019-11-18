@@ -1,4 +1,3 @@
-import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import {
   Image,
@@ -9,29 +8,21 @@ import {
   TouchableOpacity,
   View,
   Button,
+  ImageBackground,
 } from 'react-native';
 import firebase from 'firebase';
 export default class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}
-        >
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={require('../assets/images/concertstock.jpeg')}
-              style={styles.welcomeImage}
-            />
-          </View>
-
-          <View style={styles.welcomeContainer}>
+      <ImageBackground
+        source={require('../assets/images/concertscreen.jpg')}
+        style={{ width: '100%', height: '100%' }}
+        imageStyle={{ opacity: 0.5 }}
+      >
+        <View style={styles.container}>
+          <ScrollView>
             <Text style={styles.featuresText}>Meet your festie bestie!</Text>
             <IntroductionText />
-            <View
-              style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-            ></View>
             <Text style={styles.featuresText}>Discover New Shows!</Text>
             <Text style={styles.featuresText}>
               Share Your Favorite Memories!
@@ -42,16 +33,16 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.featuresText}>
               Chat with Others About Music!
             </Text>
-          </View>
-        </ScrollView>
-      </View>
+          </ScrollView>
+        </View>
+      </ImageBackground>
     );
   }
 }
 
 function IntroductionText() {
   return (
-    <Text style={styles.developmentModeText}>
+    <Text>
       Concert Mates is the app for music lovers to meet new people with similar
       music interests.
     </Text>
@@ -61,52 +52,19 @@ function IntroductionText() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  contentContainer: {
-    paddingTop: 30,
-  },
-  welcomeContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-  },
-  welcomeImage: {
-    width: 500,
-    height: 400,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
+    justifyContent: 'space-around',
   },
   featuresText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
-  },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
+    lineHeight: 20,
+    fontFamily: 'Helvetica',
+    fontSize: 30,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
-  },
-  helpLink: {
-    paddingVertical: 15,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+    padding: 60,
+    margin: 5,
+    borderColor: '#2a4944',
+    borderWidth: 1,
   },
 });
