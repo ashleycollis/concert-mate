@@ -7,6 +7,7 @@ export default class Feed extends React.Component {
     super(props);
     this.state = {
       photos: [],
+      concerts: [],
       refresh: false,
       loading: true,
     };

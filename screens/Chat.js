@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 class Chat extends Component {
@@ -8,8 +8,7 @@ class Chat extends Component {
   };
 
   render() {
-    return <GiftedChat />;
+    return <Text>Chat</Text>;
   }
 }
-const styles = StyleSheet.create({});
 export default Chat;

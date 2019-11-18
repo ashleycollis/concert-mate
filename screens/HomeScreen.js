@@ -9,6 +9,7 @@ import {
   View,
   Button,
   ImageBackground,
+  SafeAreaView,
 } from 'react-native';
 import firebase from 'firebase';
 export default class HomeScreen extends React.Component {
@@ -21,8 +22,11 @@ export default class HomeScreen extends React.Component {
       >
         <View style={styles.container}>
           <ScrollView>
+            <SafeAreaView>
+              <IntroductionText />
+            </SafeAreaView>
             <Text style={styles.featuresText}>Meet your festie bestie!</Text>
-            <IntroductionText />
+
             <Text style={styles.featuresText}>Discover New Shows!</Text>
             <Text style={styles.featuresText}>
               Share Your Favorite Memories!
@@ -65,6 +69,6 @@ const styles = StyleSheet.create({
     padding: 60,
     margin: 5,
     borderColor: '#2a4944',
-    borderWidth: 1,
+    borderWidth: 5,
   },
 });
