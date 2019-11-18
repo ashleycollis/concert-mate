@@ -1,12 +1,15 @@
-import React from "react";
-import {Text, View} from "react-native";
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { GiftedChat } from 'react-native-gifted-chat';
 
-export default class Chat extends React.Component {
-    render() {
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>Chats!</Text>
-            </View>
-        );
-    }
+class Chat extends Component {
+  state = {
+    messages: [],
+  };
+
+  render() {
+    return <GiftedChat />;
+  }
 }
+const styles = StyleSheet.create({});
+export default Chat;

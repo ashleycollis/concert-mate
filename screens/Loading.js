@@ -7,6 +7,10 @@ export default class Loading extends React.Component {
   componentDidMount() {
     if (!firebase.apps.length) {
       firebase.initializeApp(config);
+      firebase
+        .database()
+        .ref('/refName')
+        .set('value!');
     }
 
     firebase.auth().onAuthStateChanged(user => {
